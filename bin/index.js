@@ -3,7 +3,7 @@
 const chalk = require("chalk");
 const boxen = require("boxen");
 const yargs = require("yargs");
-const terminalOverwrite = require('terminal-overwrite');
+//const terminalOverwrite = require('terminal-overwrite');
 const axios = require("axios");
 
 // Little example of animations
@@ -14,14 +14,20 @@ const axios = require("axios");
 //     terminalOverwrite(`${frame} Pesty ${frame}`);
 // }, 80);
 
+var username = "Guest";
+
 const options = yargs
     .usage("Usage: -n <name>")
-    .option("n", { alias: "name", describe: "Your name", type: "string", demandOption: true })
+    .option("n", { alias: "name", describe: "Your name", type: "string", demandOption: false })
     .option("s", { alias: "search", describe: "Search term", type: "string" })
     .argv;
 
+
+if (options.name)
+    username = options.name;
+
 var greeting = chalk.whiteBright.bgWhite.bold(`Hello, `);
-greeting += chalk.whiteBright.bgWhite.bold.underline(`${options.name}`);
+greeting += chalk.whiteBright.bgWhite.bold.underline(`${username}`);
 greeting += chalk.whiteBright.bgWhite.bold(`!\n\n`);
 
 const boxenOptions = {
