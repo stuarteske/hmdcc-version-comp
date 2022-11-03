@@ -15,6 +15,9 @@ npm uninstall -g console-template
 Run Command
 console-template -n "name" <? -s searchTerm ?>
 
+oAuth Code
+Add "pkce-login": "./bin/pkceLogin.js"
+
 Links
 https://www.npmjs.com/package/chalk
 https://www.npmjs.com/package/yargs

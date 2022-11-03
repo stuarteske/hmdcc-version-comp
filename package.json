@@ -19,7 +19,6 @@
     "yargs": "13.2"
   },
   "bin": {
-    "joke": "./bin/index.js",
-    "pkce-login": "./bin/pkceLogin.js"
+    "joke": "./bin/index.js"
   }
 }
