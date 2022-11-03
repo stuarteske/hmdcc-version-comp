@@ -10,10 +10,14 @@ Install as console command
 npm install -g .
 
 Uninstall the console command
-npm uninstall -g console-template
+npm uninstall -g joke
 
 Run Command
-console-template -n "name" <? -s searchTerm ?>
+joke <? -n name ?> <? -s searchTerm ?>
+joke
+joke -s dad
+joke -n jim -s dad
+joke --version
 
 oAuth Code
 Add "pkce-login": "./bin/pkceLogin.js"
