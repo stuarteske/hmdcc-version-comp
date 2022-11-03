@@ -9,12 +9,17 @@
   "author": "Pesty",
   "license": "ISC",
   "dependencies": {
+    "@hapi/hapi": "18.3",
     "axios": "^0.21.1",
     "boxen": "4.0",
     "chalk": "2.4",
+    "dotenv": "8.0",
+    "open": "6.3",
+    "uuid": "3.3",
     "yargs": "13.2"
   },
   "bin": {
-    "hello": "./bin/index.js"
+    "joke": "./bin/index.js",
+    "pkce-login": "./bin/pkceLogin.js"
   }
 }
