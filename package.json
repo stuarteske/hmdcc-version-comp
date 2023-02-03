@@ -1,23 +1,22 @@
 {
-  "name": "hmdcc-version-comp",
+  "name": "@bryter/hmdcc-version-comp",
   "description": "Used to compare, translate and convert hmdcc firmware version data.",
   "version": "1.0.0",
   "homepage": "https://github.com/stevelacy/gulp-bump",
-  "repository": "git://github.com/stevelacy/gulp-bump.git",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stevelacy/gulp-bump.git"
+  },
   "main": "./bin/index.js",
   "scripts": {
     "test": "mocha --recursive"
   },
-  "author": "Stuart Eske <stuart@bryterdigital.co.uk> (http://bryter.digital) ",
-  "dependencies": {},
-  "devDependencies": {
-    "mocha": "*"
-  },
-  "bin": {
-    "sha256": "./bin/index.js"
-  },
+  "author": "Stuart Eske <stuart@bryterdigital.co.uk> (http://bryter.digital)",
   "devDependencies": {
     "mocha": "^10.1.0"
+  },
+  "bin": {
+    "sha256": "bin/index.js"
   },
   "keywords": [
     "hmdcc",
@@ -25,5 +24,11 @@
     "version",
     "comparrison"
   ],
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevelacy/gulp-bump/issues"
+  },
+  "directories": {
+    "test": "test"
+  }
 }
