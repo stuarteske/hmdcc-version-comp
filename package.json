@@ -2,10 +2,10 @@
   "name": "@bryter/hmdcc-version-comp",
   "description": "Used to compare, translate and convert hmdcc firmware version data.",
   "version": "1.0.0",
-  "homepage": "https://github.com/stevelacy/gulp-bump",
+  "homepage": "https://github.com/stuarteske/hmdcc-version-comp",
   "repository": {
     "type": "git",
-    "url": "git://github.com/stevelacy/gulp-bump.git"
+    "url": "https://github.com/stuarteske/hmdcc-version-comp"
   },
   "main": "./bin/index.js",
   "scripts": {
