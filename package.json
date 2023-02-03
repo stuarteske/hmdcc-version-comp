@@ -1,24 +1,29 @@
 {
-  "name": "console-template",
+  "name": "hmdcc-version-comp",
+  "description": "Used to compare, translate and convert hmdcc firmware version data.",
   "version": "1.0.0",
-  "description": "",
+  "homepage": "https://github.com/stevelacy/gulp-bump",
+  "repository": "git://github.com/stevelacy/gulp-bump.git",
   "main": "./bin/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --recursive"
   },
-  "author": "Pesty",
-  "license": "ISC",
-  "dependencies": {
-    "@hapi/hapi": "18.3",
-    "axios": "^0.21.1",
-    "boxen": "4.0",
-    "chalk": "2.4",
-    "dotenv": "8.0",
-    "open": "6.3",
-    "uuid": "3.3",
-    "yargs": "13.2"
+  "author": "Stuart Eske <stuart@bryterdigital.co.uk> (http://bryter.digital) ",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "*"
   },
   "bin": {
-    "joke": "./bin/index.js"
-  }
+    "sha256": "./bin/index.js"
+  },
+  "devDependencies": {
+    "mocha": "^10.1.0"
+  },
+  "keywords": [
+    "hmdcc",
+    "firmware",
+    "version",
+    "comparrison"
+  ],
+  "license": "ISC"
 }

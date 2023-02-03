@@ -4,7 +4,8 @@ const chalk = require("chalk");
 const boxen = require("boxen");
 const yargs = require("yargs");
 //const terminalOverwrite = require('terminal-overwrite');
-const axios = require("axios");
+//const axios = require("axios");
+const SHA256 = require( "../src/sha256" );
 
 // Little example of animations
 // const frames = ['-', '\\', '|', '/'];
@@ -14,21 +15,6 @@ const axios = require("axios");
 //     terminalOverwrite(`${frame} Pesty ${frame}`);
 // }, 80);
 
-var username = "Guest";
-
-const options = yargs
-    .usage("Usage: -n <name>")
-    .option("n", { alias: "name", describe: "Your name", type: "string", demandOption: false })
-    .option("s", { alias: "search", describe: "Search term", type: "string" })
-    .argv;
-
-
-if (options.name)
-    username = options.name;
-
-var greeting = chalk.whiteBright.bgWhite.bold(`Hello, `);
-greeting += chalk.whiteBright.bgWhite.bold.underline(`${username}`);
-greeting += chalk.whiteBright.bgWhite.bold(`!\n\n`);
 
 const boxenOptions = {
     // title: "magical",        // Not in current version
@@ -49,8 +35,28 @@ const boxenOptions = {
     //left: '|',                // Not in current version
     //right: '|'                // Not in current version
     // End Border Style
-
 };
+
+var text = "";
+
+const options = yargs
+    .usage("Usage: -t <text>")
+    .option("t", { alias: "text", describe: "Text to hash", type: "string", demandOption: false })
+    .argv;
+//console.log(options);
+
+if (options._[0])
+    text = options._[0];
+
+// if (options.text)
+//     text = options.text;
+
+var output = chalk.whiteBright.bgWhite(`${SHA256.hash(text)}`);
+//output += chalk.whiteBright.bgWhite.bold(`\n`);
+
+console.log(output);
+
+
 
 // Get the joke
 // Example
@@ -60,42 +66,42 @@ const boxenOptions = {
 //     "joke": "My dog used to chase people on a bike a lot. It got so bad I had to take his bike away.",
 //     "status": 200
 // }
-let jokeTxt ="Here's a random joke for you: \n"
-if (options.search) {
-    jokeTxt = chalk.bgGreen.bold(`Searching`);
-    jokeTxt += ` for jokes about `;
-    jokeTxt += chalk.bgCyan(`"${options.search}"`);
-    jokeTxt += `...\n`;
-}
+// let jokeTxt ="Here's a random joke for you: \n"
+// if (options.search) {
+//     jokeTxt = chalk.bgGreen.bold(`Searching`);
+//     jokeTxt += ` for jokes about `;
+//     jokeTxt += chalk.bgCyan(`"${options.search}"`);
+//     jokeTxt += `...\n`;
+// }
 
 // API https://icanhazdadjoke.com/api
 // The url depends on searching or not
-const url = options.search ? `https://icanhazdadjoke.com/search?term=${escape(options.search)}&limit=3` : "https://icanhazdadjoke.com/";
-axios.get(
-    url,
-    {
-    headers: {
-        'Accept': "application/json",
-        'User-Agent': 'Postman'
-    }
-}).then(res => {
-    let jokesTxt = '';
-
-    if (options.search) {
-        // if searching for jokes, loop over the results
-        res.data.results.forEach( j => {
-            jokesTxt += "\n" + j.joke;
-        });
-        if (res.data.results.length === 0) {
-            jokesTxt = "no jokes found :'(";
-        }
-    } else {
-        jokesTxt = res.data.joke;
-    }
-
-    msgBox = boxen( greeting + jokeTxt + jokesTxt, boxenOptions );
-    console.log(msgBox);
-});
+// const url = options.search ? `https://icanhazdadjoke.com/search?term=${escape(options.search)}&limit=3` : "https://icanhazdadjoke.com/";
+// axios.get(
+//     url,
+//     {
+//     headers: {
+//         'Accept': "application/json",
+//         'User-Agent': 'Postman'
+//     }
+// }).then(res => {
+//     let jokesTxt = '';
+//
+//     if (options.search) {
+//         // if searching for jokes, loop over the results
+//         res.data.results.forEach( j => {
+//             jokesTxt += "\n" + j.joke;
+//         });
+//         if (res.data.results.length === 0) {
+//             jokesTxt = "no jokes found :'(";
+//         }
+//     } else {
+//         jokesTxt = res.data.joke;
+//     }
+//
+//     msgBox = boxen( greeting + jokeTxt + jokesTxt, boxenOptions );
+//     console.log(msgBox);
+// });
 
 
 
