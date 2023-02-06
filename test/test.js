@@ -103,7 +103,7 @@ describe('Comparitor Function Testing', function () {
                     46,
                     49,
                     0,
-                ] // marvellousmargate // debbieherschell
+                ]
                 , [
                     117,
                     49,
@@ -130,7 +130,7 @@ describe('Comparitor Function Testing', function () {
                     46,
                     49,
                     0,
-                ] // marvellousmargate // debbieherschell
+                ]
                 , "v1.8.1"
                 , false
             )
@@ -147,7 +147,7 @@ describe('Comparitor Function Testing', function () {
                     46,
                     49,
                     0,
-                ] // marvellousmargate // debbieherschell
+                ]
                 , "v1.8"
                 , false
             )
@@ -164,7 +164,7 @@ describe('Comparitor Function Testing', function () {
                     46,
                     49,
                     0,
-                ] // marvellousmargate // debbieherschell
+                ]
                 , "1.8.1"
                 , true
             )
@@ -180,7 +180,7 @@ describe('Comparitor Function Testing', function () {
                     56,
                     46,
                     49
-                ] // marvellousmargate // debbieherschell
+                ]
                 , "1.8.1"
                 , true
             )
@@ -197,7 +197,7 @@ describe('Comparitor Function Testing', function () {
                     46,
                     49,
                     0
-                ] // marvellousmargate // debbieherschell
+                ]
                 , "v1.8.1"
                 , false
             )
