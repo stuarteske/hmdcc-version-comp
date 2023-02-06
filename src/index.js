@@ -1,6 +1,5 @@
 module.exports = class Comparitator {
 
-
     static aryToStr = (ary, ignoreFirstChar = false) => {
 
         let str = '';
@@ -55,7 +54,5 @@ module.exports = class Comparitator {
 
         return isSame;
     }
-
-
 
 }
