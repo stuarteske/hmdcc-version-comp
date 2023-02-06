@@ -1,7 +1,7 @@
 {
   "name": "@bryter/hmdcc-version-comp",
   "description": "Used to compare, translate and convert hmdcc firmware version data.",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "homepage": "https://github.com/stuarteske/hmdcc-version-comp",
   "repository": {
     "type": "git",
