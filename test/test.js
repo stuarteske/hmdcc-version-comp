@@ -1,5 +1,5 @@
 var assert = require('assert');
-const Comparitor = require( "../bin/index" );
+const Comparitor = require( "../src/index" );
 
 // Rest with mocha, mocha --recursive
 
